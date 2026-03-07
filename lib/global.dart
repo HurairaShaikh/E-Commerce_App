@@ -1,0 +1,42 @@
+final List<Map<String, Object>> product = [
+  {
+    "id": 0,
+    "title": "Men's Nike Shoes",
+    "brand": "Nike",
+    "size": [7, 8, 9, 10],
+    "price": 44.52,
+    "imageurl": "assets/images/shoes_1.png",
+  },
+  {
+    "id": 01,
+    "title": "Women's Adidas Shoes",
+    "brand": "Adidas",
+    "size": [7, 8, 9],
+    "price": 36.78,
+    "imageurl": "assets/images/shoes_2.png",
+  },
+  {
+    "id": 02,
+    "title": "Bata shoes",
+    "brand": "Bata",
+    "size": [7, 8, 10],
+    "price": 29.52,
+    "imageurl": "assets/images/shoes_3.png",
+  },
+  {
+    "id": 04,
+    "title": "Kids Shoes",
+    "brand": "Service",
+    "size": [8],
+    "price": 40.52,
+    "imageurl": "assets/images/shoes_4.png",
+  },
+  {
+    "id": 05,
+    "title": "Mens Shirt",
+    "brand": "Gucci",
+    "size": [12, 22, 32],
+    "price": 53.52,
+    "imageurl": "assets/images/shirt1.jpg",
+  },
+];
