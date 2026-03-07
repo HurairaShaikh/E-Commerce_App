@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Pay {
   Map<String, dynamic>? payintentdata;
-
+  
   Future<void> makepayment(int amount, String currency) async {
     try {
       payintentdata = await createpayintent(amount, currency);

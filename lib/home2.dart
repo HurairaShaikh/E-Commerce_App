@@ -39,9 +39,6 @@ class _HomesState extends State<Homes> {
   Widget build(BuildContext context) {
     return Scaffold(
       //   backgroundColor: Colors.white,
-      drawer: Drawer(
-        
-      ),
       body: SafeArea(
         child: Column(
           children: [

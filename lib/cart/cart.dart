@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/cart/cart_provider.dart';
+import 'package:ecommerce_app/order/order_history.dart';
+import 'package:ecommerce_app/order/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ecommerce_app/payments/pay.dart';
@@ -17,6 +19,20 @@ class _CartpageState extends State<Cartpage> {
       appBar: AppBar(
         title: Text("CART", style: Theme.of(context).textTheme.titleMedium),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OrderHistoryPage()),
+                );
+              },
+              child: Icon(Icons.history),
+            ),
+          ),
+        ],
       ),
       body: Consumer<CartProvider>(
         builder: (context, cartProvider, child) {
@@ -146,7 +162,10 @@ class _CartpageState extends State<Cartpage> {
                         cartProvider.totalPrice.toInt() * 100,
                         "usd",
                       );
-
+                      Provider.of<OrderHistoryProvider>(
+                        context,
+                        listen: false,
+                      ).addOrder(cartProvider.cart);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -163,6 +182,7 @@ class _CartpageState extends State<Cartpage> {
                         ),
                       );
                       cartProvider.clearCart();
+
                       setState(() {});
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
