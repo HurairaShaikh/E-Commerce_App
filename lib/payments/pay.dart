@@ -39,7 +39,7 @@ class Pay {
         Uri.parse("https://api.stripe.com/v1/payment_intents"),
         body: body,
         headers: {
-          "Authorization": "Bearer $secret",
+          "Authorization": "Bearer $dumydata",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       );
