@@ -7,13 +7,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+String publishableKey =
+    "pk_test_51T74aV1DN66cpNke2jwe9mKR8VmSALXgOTfQ912HJytqgyMszm5xOpzrKeLu2UhX8NSoOfoVT6aCUMjmYPcN8G2k00mYzWlLHj";
+String secret =
+    "sk_test_51T74aV1DN66cpNke2TU1khGwpoNSOlXGFBRv1unvgzyEDeTWZ3SEFNCMO4CX0Me4qf596JMgMdKgCFe9jcCLu00R00Y36dXkZx";
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
- await dotenv.load(fileName: ".env");
-  Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']!;
+
+  Stripe.publishableKey = publishableKey;
   Stripe.instance.applySettings();
 
   runApp(const MyApp());

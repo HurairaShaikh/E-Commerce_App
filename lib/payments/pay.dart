@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:ecommerce_app/main.dart';
-import 'package:ecommerce_app/payments/dumy.env';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
@@ -40,7 +39,7 @@ class Pay {
         Uri.parse("https://api.stripe.com/v1/payment_intents"),
         body: body,
         headers: {
-          "Authorization": "Bearer $dumydata",
+          "Authorization": "Bearer $secret",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       );
