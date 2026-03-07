@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
-        home: const MyHomePage(),
+        home: const Login(),
       ),
     );
   }

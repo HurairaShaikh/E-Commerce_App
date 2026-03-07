@@ -145,7 +145,7 @@ class _SignupState extends State<Signup> {
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 40),
-                  backgroundColor: Colors.white,
+                  backgroundColor: Color.fromRGBO(254, 206, 1, 1),
                 ),
                 child: isloading
                     ? Transform.scale(
@@ -159,13 +159,14 @@ class _SignupState extends State<Signup> {
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.group_add, size: 25),
+                          Icon(Icons.group_add, size: 25, color: Colors.white),
                           SizedBox(width: 10),
                           Text(
                             "Sign Up",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w900,
                               fontSize: 16,
+                              color: Colors.white,
                             ),
                           ),
                         ],
