@@ -1,7 +1,9 @@
+import 'package:ecommerce_app/Authentication/login.dart';
 import 'package:ecommerce_app/cart/cart_provider.dart';
 import 'package:ecommerce_app/firebase_options.dart';
 import 'package:ecommerce_app/home.dart';
 import 'package:ecommerce_app/order/order_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -20,11 +22,13 @@ void main() async {
   Stripe.publishableKey = publishableKey;
   Stripe.instance.applySettings();
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final auth = FirebaseAuth.instance;
+  late final user = auth.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +57,7 @@ class MyApp extends StatelessWidget {
             bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
-        home: const MyHomePage(),
+        home: user != null ? MyHomePage() : Login(),
       ),
     );
   }
