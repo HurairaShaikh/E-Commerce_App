@@ -28,32 +28,33 @@ class _SignupState extends State<Signup> {
   final password = TextEditingController();
   final key = GlobalKey<FormState>();
   final auth = FirebaseAuth.instance;
+  late final User? user = auth.currentUser;
   bool isloading = false;
+  String errormessage = "";
   void signup() async {
     setState(() {
       isloading = true;
     });
 
-    await auth
-        .createUserWithEmailAndPassword(
-          email: email.text,
-          password: password.text,
-        )
-        .then((value) {
-          setState(() {
-            isloading = false;
-          });
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Login()),
-          );
-        })
-        .onError((error, stackTrace) {
-          setState(() {
-            isloading = false;
-          });
-          print(error);
-        });
+    try {
+      await auth.createUserWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
+      await FirebaseAuth.instance.currentUser?.updateProfile(
+        displayName: name.text,
+      );
+      setState(() {
+        isloading = false;
+      });
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    } catch (e) {
+      setState(() {
+        isloading = false;
+      });
+      errormessage = e.toString();
+    }
+
     debugPrint("Login Successful");
   }
 
