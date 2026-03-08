@@ -14,16 +14,14 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(title: Text("Profile"), centerTitle: true),
       body: Column(
         children: [
+          ListTile(title: Text("Heloo"), leading: Icon(Icons.person)),
+          Divider(),
+          ListTile(title: Text("Heloo"), leading: Icon(Icons.email)),
+          Divider(),
           ListTile(
             title: Text("Heloo"),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/shoes_1.png"),
-            ),
+            leading: Icon(Icons.perm_contact_calendar_rounded),
           ),
-          Divider(),
-          Text("data"),
-          Divider(),
-          Text("data"),
           Divider(),
           Text("data"),
         ],
