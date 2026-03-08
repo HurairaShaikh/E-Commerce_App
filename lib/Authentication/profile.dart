@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -8,6 +9,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,13 @@ class _ProfileState extends State<Profile> {
             leading: Icon(Icons.perm_contact_calendar_rounded),
           ),
           Divider(),
-          Text("data"),
+          InkWell(
+            onTap: () {},
+            child: ListTile(
+              title: Text("Sign out"),
+              leading: Icon(Icons.logout),
+            ),
+          ),
         ],
       ),
     );
