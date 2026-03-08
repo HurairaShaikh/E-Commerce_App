@@ -203,11 +203,15 @@ class _CartpageState extends State<Cartpage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Color.fromRGBO(254, 206, 1, 1),
                   ),
                   child: Text(
                     "Checkout",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
