@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LogOut extends StatefulWidget {
-  const LogOut({super.key});
+class Profile
+ extends StatefulWidget {
+  const Profile
+  ({super.key});
 
   @override
-  State<LogOut> createState() => _LogOutState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _LogOutState extends State<LogOut> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
