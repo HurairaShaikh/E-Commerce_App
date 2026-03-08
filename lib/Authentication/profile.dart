@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Profile
- extends StatefulWidget {
-  const Profile
-  ({super.key});
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -22,13 +20,12 @@ class _ProfileState extends State<Profile> {
               backgroundImage: AssetImage("assets/images/shoes_1.png"),
             ),
           ),
-          ListTile(
-            title: Text("Heloo"),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/shoes_1.png"),
-            ),
-          ),
-          ElevatedButton(onPressed: () {}, child: Icon(Icons.logout)),
+          Divider(),
+          Text("data"),
+          Divider(),
+          Text("data"),
+          Divider(),
+          Text("data"),
         ],
       ),
     );
