@@ -28,7 +28,6 @@ class _SignupState extends State<Signup> {
   final password = TextEditingController();
   final key = GlobalKey<FormState>();
   final auth = FirebaseAuth.instance;
-  late final User? user = auth.currentUser;
   bool isloading = false;
   String errormessage = "";
   void signup() async {
