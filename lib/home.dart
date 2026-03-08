@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/Authentication/log_out.dart';
+import 'package:ecommerce_app/Authentication/profile.dart';
 import 'package:ecommerce_app/cart/cart.dart';
 import 'package:ecommerce_app/home2.dart';
 import 'package:flutter/material.dart';
