@@ -18,8 +18,19 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(title: Text("Profile"), centerTitle: true),
       body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 100,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/bg.png"),
+                ),
+              ),
+            ),
+          ),
           ListTile(
-            title: Text(user?.displayName ?? "n".toString()),
+            title: Text(user?.displayName ?? "Guest".toString()),
             leading: Icon(Icons.person),
           ),
           Divider(),
@@ -52,6 +63,9 @@ class _ProfileState extends State<Profile> {
               leading: Icon(Icons.logout),
             ),
           ),
+          Divider(),
+          SizedBox(height: 20),
+          Text("Terms & Conditons"),
         ],
       ),
     );

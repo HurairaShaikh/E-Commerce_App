@@ -61,14 +61,14 @@ final List<Map<String, Object>> product = [
     "brand": "Nike",
     "size": [6, 7, 8, 9, 10],
     "price": 40.45,
-    "imageurl": "assets/images/n2.png",
+    "imageurl": "assets/images/n1.png",
   },
   {
     "id": 08,
     "title": "Jogging Shoes",
     "brand": "Adidas",
     "size": [6, 7, 8, 9, 10],
-    "price": 40.45,
+    "price": 63.45,
     "imageurl": "assets/images/a1.png",
   },
 ];
